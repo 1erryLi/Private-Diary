@@ -7,6 +7,7 @@ export default defineConfig({
   description: '1erryLi 的 AI 学习与实践记录',
 
   head: [
+    ['meta', { name: 'robots', content: 'noindex, nofollow' }],
     ['link', { rel: 'icon', href: '/Private-Diary/favicon.ico' }],
   ],
 
