@@ -46,9 +46,10 @@ features:
     "AI 不会取代你，但会用 AI 的人会。",
     "学习最快的方式：用起来，踩坑了，记下来。"
   ];
-  var i = 0;
+  var i = Math.floor(Math.random() * quotes.length);
   var el = document.getElementById('quoteText');
   if (!el) return;
+  el.textContent = quotes[i];
   setInterval(function() {
     el.style.opacity = '0';
     setTimeout(function() {
@@ -56,7 +57,7 @@ features:
       el.textContent = quotes[i];
       el.style.opacity = '1';
     }, 600);
-  }, 5000);
+  }, 15000);
 })();
 </script>
 
