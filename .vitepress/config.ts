@@ -1,16 +1,17 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/Private-Diary/',
   lang: 'zh-CN',
   title: 'AI 学习日记',
   description: '1erryLi 的 AI 学习与实践记录',
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/Private-Diary/favicon.ico' }],
   ],
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/Private-Diary/logo.svg',
     siteTitle: 'AI Diary',
 
     nav: [
