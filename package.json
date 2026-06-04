@@ -1,0 +1,17 @@
+{
+  "name": "private-diary",
+  "version": "1.0.0",
+  "description": "1erryLi's AI Learning Diary",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": ["ai", "learning", "diary"],
+  "author": "1erryLi",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
