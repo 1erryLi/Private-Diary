@@ -6,6 +6,9 @@ export default defineConfig({
   title: 'AI 学习日记',
   description: '1erryLi 的 AI 学习与实践记录',
 
+  // 锁定深色模式，移除主题切换
+  appearance: 'dark',
+
   head: [
     ['meta', { name: 'robots', content: 'noindex, nofollow' }],
     ['link', { rel: 'icon', href: '/Private-Diary/favicon.ico' }],
@@ -14,6 +17,9 @@ export default defineConfig({
   themeConfig: {
     logo: '/Private-Diary/logo.svg',
     siteTitle: 'AI Diary',
+
+    // 禁用暗色/亮色切换按钮
+    darkModeSwitchLabel: '',
 
     nav: [
       { text: '首页', link: '/' },
