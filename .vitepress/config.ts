@@ -6,8 +6,8 @@ export default defineConfig({
   title: 'AI 学习日记',
   description: '1erryLi 的 AI 学习与实践记录',
 
-  // 锁定深色模式，移除主题切换
-  appearance: 'dark',
+  // 锁定深色模式，隐藏主题切换按钮
+  appearance: false,
 
   head: [
     ['meta', { name: 'robots', content: 'noindex, nofollow' }],
