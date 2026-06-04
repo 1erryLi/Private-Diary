@@ -28,10 +28,37 @@ features:
     link: /diary/
 ---
 
-<!-- 名言 -->
+<!-- 名言轮播 -->
 <div class="home-quote sr-target">
-  <p>"每一个 bug 都是一次学习的机会，每一次配置都是对未来效率的投资。"</p>
+  <p id="quoteText">"每一个 bug 都是一次学习的机会。"</p>
 </div>
+<script>
+(function() {
+  var quotes = [
+    "每一个 bug 都是一次学习的机会，每一次配置都是对未来效率的投资。",
+    "工具是手的延伸，AI 是思维的延伸。",
+    "不要害怕从零开始，每一次归零都是一次升级。",
+    "最好的学习方式是边做边记录，回头看才知道走了多远。",
+    "配置环境虽然枯燥，但它是所有创造力的地基。",
+    "代码会过时，但解决问题的思路永远有用。",
+    "今天的折腾，是明天的从容。",
+    "写文档不是浪费时间，是给未来的自己省时间。",
+    "AI 不会取代你，但会用 AI 的人会。",
+    "学习最快的方式：用起来，踩坑了，记下来。"
+  ];
+  var i = 0;
+  var el = document.getElementById('quoteText');
+  if (!el) return;
+  setInterval(function() {
+    el.style.opacity = '0';
+    setTimeout(function() {
+      i = (i + 1) % quotes.length;
+      el.textContent = quotes[i];
+      el.style.opacity = '1';
+    }, 600);
+  }, 5000);
+})();
+</script>
 
 <!-- 近期项目 -->
 <div class="home-projects">

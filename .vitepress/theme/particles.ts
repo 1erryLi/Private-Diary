@@ -1,28 +1,20 @@
 /**
- * 鼠标跟随粒子特效
- * - 鼠标周围一圈粒子
- * - 带拖尾效果
- * - 移动端触摸支持
+ * 鼠标跟随粒子 - 平缓持续版
+ * - 淡绿色微粒，缓慢漂浮
+ * - 带轻微拖尾，不晃眼
  */
 export function initParticles() {
   if (typeof window === 'undefined') return
 
   const canvas = document.createElement('canvas')
-  canvas.id = 'particle-canvas'
-  canvas.style.cssText = `
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 9998;
-  `
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;'
   document.body.appendChild(canvas)
 
   const ctx = canvas.getContext('2d')!
   let w = 0, h = 0
-  let mouse = { x: -999, y: -999 }
-  let particles: Particle[] = []
-  const MAX = 35
+  let mx = -999, my = -999
+  const particles: P[] = []
+  const MAX = 25
 
   function resize() {
     w = canvas.width = window.innerWidth
@@ -31,95 +23,68 @@ export function initParticles() {
   resize()
   window.addEventListener('resize', resize)
 
-  class Particle {
-    x: number
-    y: number
-    vx: number
-    vy: number
-    life: number
-    maxLife: number
-    size: number
+  class P {
+    x: number; y: number
+    vx: number; vy: number
+    life: number; size: number
     hue: number
 
     constructor(x: number, y: number) {
-      const angle = Math.random() * Math.PI * 2
-      const speed = Math.random() * 1.5 + 0.5
-      this.x = x + (Math.random() - 0.5) * 30
-      this.y = y + (Math.random() - 0.5) * 30
-      this.vx = Math.cos(angle) * speed
-      this.vy = Math.sin(angle) * speed - 0.3
+      const a = Math.random() * Math.PI * 2
+      const s = Math.random() * 0.4 + 0.15
+      this.x = x + (Math.random() - 0.5) * 40
+      this.y = y + (Math.random() - 0.5) * 40
+      this.vx = Math.cos(a) * s
+      this.vy = Math.sin(a) * s - 0.08
       this.life = 1
-      this.maxLife = Math.random() * 0.6 + 0.4
-      this.size = Math.random() * 3 + 1.5
-      this.hue = Math.random() * 40 + 260 // 紫色范围
+      this.size = Math.random() * 2.5 + 1
+      this.hue = Math.random() * 30 + 140 // 淡绿色系
     }
 
     update() {
       this.x += this.vx
       this.y += this.vy
-      this.vy += 0.01 // 微重力
-      this.life -= 0.012
-      this.size *= 0.995
+      this.vy -= 0.003 // 轻微上浮
+      this.life -= 0.006
+      this.size *= 0.998
     }
 
     draw() {
       if (this.life <= 0) return
-      const alpha = Math.min(this.life / this.maxLife, 1) * 0.7
+      const a = this.life * 0.4
+      // 光点
       ctx.beginPath()
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-      ctx.fillStyle = `hsla(${this.hue}, 80%, 70%, ${alpha})`
+      ctx.fillStyle = `hsla(${this.hue}, 60%, 65%, ${a})`
       ctx.fill()
-
-      // 发光效果
+      // 柔和光晕
       ctx.beginPath()
-      ctx.arc(this.x, this.y, this.size * 2.5, 0, Math.PI * 2)
-      ctx.fillStyle = `hsla(${this.hue}, 80%, 70%, ${alpha * 0.15})`
+      ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2)
+      ctx.fillStyle = `hsla(${this.hue}, 60%, 65%, ${a * 0.08})`
       ctx.fill()
     }
   }
 
-  // 鼠标移动
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX
-    mouse.y = e.clientY
-  }, { passive: true })
-
-  // 触摸支持
+  window.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY }, { passive: true })
   window.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
-      mouse.x = e.touches[0].clientX
-      mouse.y = e.touches[0].clientY
-    }
+    if (e.touches.length) { mx = e.touches[0].clientX; my = e.touches[0].clientY }
   }, { passive: true })
+  window.addEventListener('touchend', () => { mx = -999; my = -999 })
 
-  window.addEventListener('touchend', () => {
-    mouse.x = -999
-    mouse.y = -999
-  })
-
-  let frame = 0
-
+  let tick = 0
   function loop() {
     ctx.clearRect(0, 0, w, h)
-    frame++
+    tick++
 
-    // 每帧生成新粒子
-    if (mouse.x > 0 && frame % 2 === 0) {
-      for (let i = 0; i < 2; i++) {
-        if (particles.length < MAX) {
-          particles.push(new Particle(mouse.x, mouse.y))
-        }
-      }
+    // 每 4 帧生成 1 个粒子，缓慢持续
+    if (mx > 0 && tick % 4 === 0 && particles.length < MAX) {
+      particles.push(new P(mx, my))
     }
 
-    // 更新 & 绘制
     for (let i = particles.length - 1; i >= 0; i--) {
-      const p = particles[i]
-      p.update()
-      p.draw()
-      if (p.life <= 0) {
-        particles.splice(i, 1)
-      }
+      particles[i].update()
+      particles[i].draw()
+      if (particles[i].life <= 0) particles.splice(i, 1)
     }
 
     requestAnimationFrame(loop)
