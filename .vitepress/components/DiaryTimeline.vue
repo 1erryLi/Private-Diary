@@ -1,6 +1,18 @@
 <script setup>
 const entries = [
   {
+    year: '2026',
+    items: [
+      {
+        date: '06-04',
+        title: '首页改版与滚动动画',
+        link: '/diary/2026/06-04-homepage-redesign',
+        desc: '给网站做了一次大改版：滚动渐显动画、交互式卡片、近期项目展示、深色科技风',
+        tags: ['VitePress', 'CSS', '动画', '首页设计'],
+      },
+    ],
+  },
+  {
     year: '2025',
     items: [
       {

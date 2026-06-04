@@ -36,6 +36,13 @@ export default defineConfig({
     sidebar: {
       '/diary/': [
         {
+          text: '2026',
+          collapsed: false,
+          items: [
+            { text: '6月 · 首页改版', link: '/diary/2026/06-04-homepage-redesign' },
+          ]
+        },
+        {
           text: '2025',
           collapsed: false,
           items: [

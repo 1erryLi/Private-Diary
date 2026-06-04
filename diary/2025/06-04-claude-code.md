@@ -40,4 +40,4 @@ Claude Code 是 Anthropic 推出的命令行 AI 编程助手，可以直接在�
 
 ---
 
-*[上一篇：配置 Hermes 桌面版 ←](/diary/2025/06-02-hermes)*
+*[上一篇：配置 Hermes 桌面版 ←](/diary/2025/06-02-hermes) ｜ [下一篇：首页改版与滚动动画 →](/diary/2026/06-04-homepage-redesign)*

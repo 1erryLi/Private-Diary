@@ -41,6 +41,23 @@ features:
   </div>
 
   <div class="project-grid">
+    <a href="/Private-Diary/diary/2026/06-04-homepage-redesign" class="project-card sr-target">
+      <div class="project-icon">🎨</div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-date">2026-06-04</span>
+          <span class="project-status">已完成</span>
+        </div>
+        <h3>首页改版与滚动动画</h3>
+        <p>给网站做了一次大改版，加了滚动渐显动画、交互式卡片、近期项目展示，做成深色科技风</p>
+        <div class="project-tags">
+          <span>VitePress</span>
+          <span>CSS</span>
+          <span>动画</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
     <a href="/Private-Diary/diary/2025/06-04-claude-code" class="project-card sr-target">
       <div class="project-icon">🤖</div>
       <div class="project-body">
@@ -87,7 +104,7 @@ features:
 <!-- 底部统计 -->
 <div class="home-stats sr-target">
   <div class="stat-item">
-    <span class="stat-num">2</span>
+    <span class="stat-num">3</span>
     <span class="stat-label">完成项目</span>
   </div>
   <div class="stat-divider"></div>
@@ -97,7 +114,7 @@ features:
   </div>
   <div class="stat-divider"></div>
   <div class="stat-item">
-    <span class="stat-num">3</span>
+    <span class="stat-num">4</span>
     <span class="stat-label">学习天数</span>
   </div>
 </div>
