@@ -69,6 +69,24 @@ features:
   </div>
 
   <div class="project-grid">
+    <a href="/Private-Diary/diary/2026/06-09-parking-solver" class="project-card sr-target">
+      <div class="project-icon">🅿️</div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-date">2026-06-09</span>
+          <span class="project-status">已完成</span>
+        </div>
+        <h3>停车场自动布局工具</h3>
+        <p>从零做了一个 TestFit Clone：自研几何排布引擎，支持 90°/60°/45° 多角度自动排车位，接了免费卫星地图可以在线描地块，还能做建筑可行性分析和合规检查，最后用 Electron 打包成了 Windows 桌面应用</p>
+        <div class="project-tags">
+          <span>Electron</span>
+          <span>Canvas</span>
+          <span>算法</span>
+          <span>桌面应用</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </a>
     <a href="/Private-Diary/diary/2026/06-04-homepage-redesign" class="project-card sr-target">
       <div class="project-icon">🎨</div>
       <div class="project-body">
@@ -77,7 +95,7 @@ features:
           <span class="project-status">已完成</span>
         </div>
         <h3>首页改版与滚动动画</h3>
-        <p>给网站做了一次大改版，加了滚动渐显动画、交互式卡片、近期项目展示，做成深色科技风</p>
+        <p>把首页从静态页面改成了深色科技风：用 IntersectionObserver 做了双向滚动渐显动画，卡片加了 hover 光晕效果，新增近期项目展示区域，修了好几个 VitePress 渲染的坑</p>
         <div class="project-tags">
           <span>VitePress</span>
           <span>CSS</span>
@@ -94,7 +112,7 @@ features:
           <span class="project-status">已完成</span>
         </div>
         <h3>配置 Claude Code</h3>
-        <p>把 Claude 装到了命令行里，现在终端直接跟 AI 对话写代码，不用再切浏览器了</p>
+        <p>在终端里装好了 Claude Code CLI，不用开浏览器就能直接跟 AI 对话写代码，支持项目级上下文理解，写代码、改 bug、重构都方便了很多</p>
         <div class="project-tags">
           <span>Claude Code</span>
           <span>CLI</span>
@@ -111,7 +129,7 @@ features:
           <span class="project-status">已完成</span>
         </div>
         <h3>配置 Hermes 桌面版</h3>
-        <p>装好了 Hermes Agent 桌面版，能用好几个 AI 后端，还能调工具、跑 MCP 协议</p>
+        <p>装好了 Hermes Agent 桌面版，接入了多个 AI 后端模型，能调用终端、文件、浏览器等工具，还配了 MCP 协议扩展能力，算是搭建好了整个 AI 工作流的基础设施</p>
         <div class="project-tags">
           <span>Hermes</span>
           <span>桌面版</span>
@@ -132,7 +150,7 @@ features:
 <!-- 底部统计 -->
 <div class="home-stats sr-target">
   <div class="stat-item">
-    <span class="stat-num">3</span>
+    <span class="stat-num">4</span>
     <span class="stat-label">完成项目</span>
   </div>
   <div class="stat-divider"></div>
@@ -142,7 +160,7 @@ features:
   </div>
   <div class="stat-divider"></div>
   <div class="stat-item">
-    <span class="stat-num">4</span>
+    <span class="stat-num">5</span>
     <span class="stat-label">学习天数</span>
   </div>
 </div>
