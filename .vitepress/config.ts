@@ -39,6 +39,7 @@ export default defineConfig({
           text: '2026',
           collapsed: false,
           items: [
+            { text: '6月 · 停车场工具', link: '/diary/2026/06-09-parking-solver' },
             { text: '6月 · 首页改版', link: '/diary/2026/06-04-homepage-redesign' },
           ]
         },

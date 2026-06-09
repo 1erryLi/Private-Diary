@@ -4,6 +4,13 @@ const entries = [
     year: '2026',
     items: [
       {
+        date: '06-09',
+        title: '停车场自动布局工具',
+        link: '/diary/2026/06-09-parking-solver',
+        desc: '做了一个 TestFit Clone：自动停车场排布引擎 + 地图集成 + Electron 桌面打包',
+        tags: ['Electron', 'Canvas', '停车场', '桌面应用', '算法'],
+      },
+      {
         date: '06-04',
         title: '首页改版与滚动动画',
         link: '/diary/2026/06-04-homepage-redesign',

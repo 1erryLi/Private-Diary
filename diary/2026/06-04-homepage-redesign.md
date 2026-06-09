@@ -59,4 +59,4 @@ description: 给学习日记网站做了一次大改版，加了滚动渐显动�
 
 ---
 
-*[上一篇：配置 Claude Code ←](/diary/2025/06-04-claude-code)*
+*[下一篇：停车场自动布局工具 →](/diary/2026/06-09-parking-solver) · [上一篇：配置 Claude Code ←](/diary/2025/06-04-claude-code)*
